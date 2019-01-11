@@ -1,0 +1,10 @@
+com/safaricom/cdr/controllers/JobController.class
+com/safaricom/cdr/entities/JobApplicant.class
+com/safaricom/cdr/repositories/JobApplicantRepository.class
+com/safaricom/cdr/exceptions/GlobalExceptionHandler.class
+com/safaricom/cdr/exceptions/ResourceNotFoundException.class
+com/safaricom/cdr/repositories/JobRepository.class
+com/safaricom/cdr/entities/Job.class
+com/safaricom/cdr/controllers/JobApplicantController.class
+com/safaricom/cdr/CdrApplication.class
+com/safaricom/cdr/exceptions/ErrorDetails.class

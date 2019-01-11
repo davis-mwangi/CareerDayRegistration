@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.safaricom.cdr.JobControllerTests
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.479 s - in com.safaricom.cdr.JobControllerTests

@@ -1,0 +1,10 @@
+/home/david/Desktop/JAVA/CareerDayRegistration/src/main/java/com/safaricom/cdr/repositories/JobRepository.java
+/home/david/Desktop/JAVA/CareerDayRegistration/src/main/java/com/safaricom/cdr/controllers/JobController.java
+/home/david/Desktop/JAVA/CareerDayRegistration/src/main/java/com/safaricom/cdr/exceptions/GlobalExceptionHandler.java
+/home/david/Desktop/JAVA/CareerDayRegistration/src/main/java/com/safaricom/cdr/exceptions/ErrorDetails.java
+/home/david/Desktop/JAVA/CareerDayRegistration/src/main/java/com/safaricom/cdr/repositories/JobApplicantRepository.java
+/home/david/Desktop/JAVA/CareerDayRegistration/src/main/java/com/safaricom/cdr/CdrApplication.java
+/home/david/Desktop/JAVA/CareerDayRegistration/src/main/java/com/safaricom/cdr/entities/Job.java
+/home/david/Desktop/JAVA/CareerDayRegistration/src/main/java/com/safaricom/cdr/entities/JobApplicant.java
+/home/david/Desktop/JAVA/CareerDayRegistration/src/main/java/com/safaricom/cdr/exceptions/ResourceNotFoundException.java
+/home/david/Desktop/JAVA/CareerDayRegistration/src/main/java/com/safaricom/cdr/controllers/JobApplicantController.java
