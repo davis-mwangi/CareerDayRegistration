@@ -34,6 +34,10 @@ public class ApplicantDTO {
     @JsonProperty("last_name")
     private String lastName;
     
+    @NotEmpty(message = "username can not be empty")
+    @JsonProperty("username")
+    private String username;
+    
     @Email
     @JsonProperty("email")
     private String email;
@@ -61,6 +65,7 @@ public class ApplicantDTO {
         this.id = applicant.getId();
         this.firstName = applicant.getFirstName();
         this.lastName = applicant.getLastName();
+        this.username =  applicant.getUsername();
         this.email = applicant.getEmail();
         this.phoneNumber = applicant.getPhoneNumber();
         this.educationLevel = applicant.getEducationLevel();
@@ -102,6 +107,14 @@ public class ApplicantDTO {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void setPhoneNumber(String phoneNumber) {

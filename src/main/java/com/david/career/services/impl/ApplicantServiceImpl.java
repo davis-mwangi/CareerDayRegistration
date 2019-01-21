@@ -44,12 +44,15 @@ public class ApplicantServiceImpl implements ApplicantService{
 
     @Override
     public ApplicantDTO addApplicant(ApplicantDTO applicantDTO) {
+        
+         
          Date now  = new Date();
          
          Applicant applicant =  new Applicant();
          
          applicant.setFirstName(applicantDTO.getFirstName());
          applicant.setLastName(applicantDTO.getLastName());
+         applicant.setUsername(applicantDTO.getUsername());
          applicant.setEmail(applicantDTO.getEmail());
          applicant.setPhoneNumber(applicantDTO.getPhoneNumber());
          applicant.setEducationLevel(applicantDTO.getEducationLevel());

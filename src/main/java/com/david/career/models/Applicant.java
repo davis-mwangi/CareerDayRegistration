@@ -6,32 +6,49 @@
 package com.david.career.models;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.NaturalId;
 
 /**
  *
  * @author david
  */
 @Entity
-@Table(name = "applicant")
+@Table(name = "applicants", uniqueConstraints = {
+    @UniqueConstraint(columnNames = {
+        "username"
+    }),
+    @UniqueConstraint(columnNames = {
+        "email"
+    })
+})
 public class Applicant implements DatabaseEntity, ModifiableEntity{
+    
     
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(name ="id", columnDefinition = "BINARY(16)")
+    @Column(name ="applicant_id", columnDefinition = "BINARY(16)")
     private UUID id;
     
     @Column(name = "first_name")
@@ -45,9 +62,14 @@ public class Applicant implements DatabaseEntity, ModifiableEntity{
     @Size(max = 100, message = "last_name can not be more than 100 characters")
     private String lastName;
     
+    @NotBlank
+    @Size(max = 15)
+    private String username;
+    
     @Column(name = "email")
+    @NaturalId
     @NotBlank(message = "email can not be blank.")
-    @Size(max = 100, message = "email can not be more than 100 characters.")
+    @Size(max = 40, message = "email can not be more than 100 characters.")
     @Email(message = "please  provide a valid email")
     private String email;
     
@@ -69,7 +91,7 @@ public class Applicant implements DatabaseEntity, ModifiableEntity{
     @Size(max = 100, message = "password can not be more than 100 characters.")
     @Transient
     private String password;
-    
+       
     
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at")
@@ -82,15 +104,31 @@ public class Applicant implements DatabaseEntity, ModifiableEntity{
     public Applicant() {
     }
 
-    public Applicant(UUID id, String firstName, String lastName, String email, String phoneNumber, String educationLevel, int yearsOfExperience, String password) {
+    public Applicant(UUID id, String firstName, String lastName, String username, String email, String phoneNumber, String educationLevel, int yearsOfExperience, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.username = username;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.educationLevel = educationLevel;
         this.yearsOfExperience = yearsOfExperience;
+        this.password = password;
     }
+    
+    
+    
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+   
+
+    
 
     /**
      *

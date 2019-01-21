@@ -5,10 +5,9 @@
  */
 package com.david.career.repositories;
 
-import com.david.career.models.Applicant;
+import com.david.career.models.User;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -17,6 +16,16 @@ import org.springframework.stereotype.Repository;
  * @author david
  */
 @Repository
-public interface ApplicantRepository extends JpaRepository<Applicant, UUID>{
-         
+public interface UserRepository  extends JpaRepository<User, Long>{
+    Optional<User> findByEmail(String email);
+
+    Optional<User> findByUsernameOrEmail(String username, String email);
+
+    List<User> findByIdIn(List<Long> userIds);
+
+    Optional<User> findByUsername(String username);
+
+    Boolean existsByUsername(String username);
+
+    Boolean existsByEmail(String email);
 }
